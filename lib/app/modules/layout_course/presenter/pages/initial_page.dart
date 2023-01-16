@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:layout/app/modules/layout_course/presenter/components/box_card.dart';
+import 'package:layout/app/modules/layout_course/presenter/components/sections/account_actions.dart';
+import 'package:layout/app/modules/layout_course/presenter/components/sections/account_points.dart';
 import 'package:layout/app/modules/layout_course/presenter/components/sections/header.dart';
+import 'package:layout/app/modules/layout_course/presenter/components/sections/recent_activity.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({super.key});
@@ -8,11 +10,15 @@ class InitialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [
-          Header(),
-          BoxCard(boxContent: Text('Olá mundo!')),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            Header(),
+            RecentActivity(),
+            AccountActions(),
+            AccountPoints(),
+          ],
+        ),
       ),
     );
   }
